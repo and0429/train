@@ -18,3 +18,15 @@ CREATE TABLE `t_station_train` (
   `consignee_` varchar(255) default NULL,
   PRIMARY KEY  (`id_`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `t_source_file`;
+CREATE TABLE `t_source_file` (
+  `Id` int(11) NOT NULL auto_increment,
+  `file_id_` varchar(255) default NULL,
+  `file_name_` varchar(255) default NULL,
+  `file_path_` varchar(255) default NULL,
+  `md5_` varchar(255) default NULL,
+  `upload_time_` datetime default NULL,
+  PRIMARY KEY  (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

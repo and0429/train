@@ -43,7 +43,6 @@
 		)
 	</insert>
 
-
 	<select id="getByMd5" resultMap="sourceFile">
 		SELECT
 		<include refid="field" />

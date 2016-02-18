@@ -1,0 +1,20 @@
+use share;
+DROP TABLE IF EXISTS `t_station_train`;
+CREATE TABLE `t_station_train` (
+  `id_` int(11) NOT NULL auto_increment,
+  `file_id_` varchar(255) default NULL,
+  `date_` datetime default NULL,
+  `serial_num_` varchar(255) default NULL,
+  `train_num_` varchar(255) default NULL,
+  `train_type_` varchar(255) default NULL,
+  `change_long_` double default NULL,
+  `self_weight_` double default NULL,
+  `load_weight_` double default NULL,
+  `goods_name_` varchar(255) default NULL,
+  `from_station_` varchar(255) default NULL,
+  `to_station_` varchar(255) default NULL,
+  `from_bureau_` varchar(255) default NULL,
+  `to_bureau_` varchar(255) default NULL,
+  `consignee_` varchar(255) default NULL,
+  PRIMARY KEY  (`id_`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -23,6 +23,14 @@
 		upload_time_
 	</sql>
 
+	<sql id="condition">
+		<if test="fileName != null and fileName != ''">
+			<bind name="bind" value="'%' + _parameter.getFileName() + '%'" />
+			file_name_ like #{bind}
+		</if>
+	</sql>
+
+
 	<insert id="save" useGeneratedKeys="true" keyProperty="id">
 		INSERT INTO t_source_file
 		(
@@ -50,6 +58,26 @@
 		md5_ = #{md5}
 	</select>
 
+	<delete id="deleteById">
+		DELETE FROM t_source_file WHERE id_ = #{id}
+	</delete>
+
+	<select id="getWithCondition" resultMap="sourceFile">
+		SELECT
+			<include refid="field" />
+		FROM
+			t_source_file
+		<where>
+			<include refid="condition" />
+		</where>
+	</select>
+
+	<select id="getCountWithCondition" resultType="_int">
+		SELECT COUNT(*) FROM t_source_file
+		<where>
+			<include refid="condition" />
+		</where>
+	</select>
 
 
 </mapper>            

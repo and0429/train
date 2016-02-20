@@ -1,5 +1,8 @@
 package com.train.excel.dao;
 
+import java.util.List;
+
+import com.train.excel.controller.dto.SourceFileDto;
 import com.train.excel.domain.SourceFile;
 
 /**
@@ -21,5 +24,25 @@ public interface SourceFileDao {
 	 * @param sf
 	 */
 	void save(SourceFile sf);
+	
+	/**
+	 * 
+	 * @param id
+	 */
+	void deleteById(String id);
+
+	/**
+	 * 
+	 * @param condition
+	 * @return
+	 */
+	List<SourceFile> getWithCondition(SourceFileDto condition);
+
+	/**
+	 * 
+	 * @param condition
+	 * @return
+	 */
+	int getCountWithCondition(SourceFileDto condition);
 
 }

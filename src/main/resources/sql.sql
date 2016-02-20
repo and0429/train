@@ -22,7 +22,7 @@ CREATE TABLE `t_station_train` (
 
 DROP TABLE IF EXISTS `t_source_file`;
 CREATE TABLE `t_source_file` (
-  `Id` int(11) NOT NULL auto_increment,
+  `id_` int(11) NOT NULL auto_increment,
   `file_id_` varchar(255) default NULL,
   `file_name_` varchar(255) default NULL,
   `file_path_` varchar(255) default NULL,

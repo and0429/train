@@ -7,7 +7,7 @@ package com.train.excel.domain;
  */
 public class Status {
 
-	private String msg;
+	private String msg = "OK";
 	private int code;
 
 	public Status() {

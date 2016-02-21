@@ -14,12 +14,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.train.excel.domain.Status;
 import com.train.excel.service.FileUpLoadService;
+import com.train.excel.utils.FilePathConstants;
 
 @RestController
 @RequestMapping("/upload")
 public class FileUploadController {
-
-	public static final String uploadFilePath = "/upload/sourcefile";
 
 	@Inject
 	private FileUpLoadService service;
@@ -32,15 +31,15 @@ public class FileUploadController {
 	 * 
 	 * @param name
 	 * @param file
-	 * @return
+	 * @return8
 	 * @throws IOException
 	 * @throws InvalidFormatException
 	 * @throws EncryptedDocumentException
 	 */
-	@RequestMapping(path = "/excel", method = RequestMethod.GET)
-	public Status handleFormUpload(String name, MultipartFile file) throws Exception {
-		if (!file.isEmpty()) {
-			String destPath = sc.getRealPath(uploadFilePath);
+	@RequestMapping(path = "/excel", method = RequestMethod.POST)
+	public Status handleFormUpload(MultipartFile file) throws Exception {
+		if (file != null && !file.isEmpty()) {
+			String destPath = sc.getRealPath(FilePathConstants.UPLOAD_SRC_FILE_PATH);
 			return service.saveContentAndfile(file, destPath);
 		}
 		return new Status(1, "file is empty");

@@ -3,28 +3,21 @@ package com.train.excel.dao;
 import java.util.List;
 
 import com.train.excel.controller.dto.FileDto;
-import com.train.excel.domain.SourceFile;
+import com.train.excel.domain.ResultFile;
 
 /**
  * 
  * @author and04
  *
  */
-public interface SourceFileDao {
+public interface ResultFileDao {
 
 	/**
 	 * 
-	 * @param md5
-	 * @return
+	 * @param rf
 	 */
-	SourceFile getByMd5(String md5);
+	void save(ResultFile rf);
 
-	/**
-	 * 
-	 * @param sf
-	 */
-	void save(SourceFile sf);
-	
 	/**
 	 * 
 	 * @param id
@@ -36,7 +29,7 @@ public interface SourceFileDao {
 	 * @param condition
 	 * @return
 	 */
-	List<SourceFile> getWithCondition(FileDto condition);
+	List<ResultFile> getWithCondition(FileDto condition);
 
 	/**
 	 * 
@@ -44,5 +37,4 @@ public interface SourceFileDao {
 	 * @return
 	 */
 	int getCountWithCondition(FileDto condition);
-
 }

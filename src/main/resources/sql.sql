@@ -1,4 +1,4 @@
-use share;
+use train;
 DROP TABLE IF EXISTS `t_station_train`;
 CREATE TABLE `t_station_train` (
   `id_` int(11) NOT NULL auto_increment,
@@ -28,5 +28,24 @@ CREATE TABLE `t_source_file` (
   `file_path_` varchar(255) default NULL,
   `md5_` varchar(255) default NULL,
   `upload_time_` datetime default NULL,
-  PRIMARY KEY  (`Id`)
+  PRIMARY KEY  (`id_`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `t_result_file`;
+CREATE TABLE `t_result_file` (
+  `id_` int(11) NOT NULL auto_increment,
+  `src_file_id_` varchar(255) default NULL,
+  `file_path_` varchar(255) default NULL,
+  `file_name_` varchar(255) default NULL,
+  `create_time_` datetime default NULL,
+  PRIMARY KEY  (`id_`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
+
+
+
+

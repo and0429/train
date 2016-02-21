@@ -7,7 +7,7 @@ import com.train.excel.domain.Page;
  * @author and04
  *
  */
-public class SourceFileDto extends Page {
+public class FileDto extends Page {
 
 	private String fileName;
 

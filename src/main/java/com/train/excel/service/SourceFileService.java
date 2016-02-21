@@ -3,7 +3,8 @@ package com.train.excel.service;
 import java.io.IOException;
 import java.util.List;
 
-import com.train.excel.controller.dto.SourceFileDto;
+import com.train.excel.controller.dto.FileDto;
+import com.train.excel.domain.ResultFile;
 import com.train.excel.domain.SourceFile;
 
 public interface SourceFileService {
@@ -26,21 +27,21 @@ public interface SourceFileService {
 	 * 
 	 * @param id
 	 */
-	void deleteById(String id);
+	void deleteById(Long id);
 
 	/**
 	 * 
 	 * @param condition
 	 * @return
 	 */
-	List<SourceFile> getWithCondition(SourceFileDto condition);
+	List<SourceFile> getWithCondition(FileDto condition);
 
 	/**
 	 * 
 	 * @param condition
 	 * @return
 	 */
-	int getCountWithCondition(SourceFileDto condition);
+	int getCountWithCondition(FileDto condition);
 
 	/**
 	 * 同步删除
@@ -48,7 +49,16 @@ public interface SourceFileService {
 	 * @param id
 	 * @param fileId
 	 * @param filePath
+	 * @throws IOException
+	 */
+	void deleteFileAndContent(Long id, String fileId, String filePath) throws IOException;
+
+	/**
+	 * 
+	 * @param fileId
+	 * @param realPath
+	 * @return
 	 * @throws IOException 
 	 */
-	void deleteFileAndContent(String id, String fileId, String filePath) throws IOException;
+	ResultFile analysis(String srcFileId, String srcFileName, String realPath) throws IOException;
 }

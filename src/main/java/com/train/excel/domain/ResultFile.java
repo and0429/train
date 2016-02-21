@@ -16,10 +16,10 @@ public class ResultFile {
 	private Long id;
 
 	/**
-	 * 文件Id
+	 * 对应的源文件的Id
 	 */
-	private String fileId;
-	
+	private String srcFileId;
+
 	/**
 	 * 文件路径
 	 */
@@ -41,14 +41,6 @@ public class ResultFile {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public String getFileId() {
-		return fileId;
-	}
-
-	public void setFileId(String fileId) {
-		this.fileId = fileId;
 	}
 
 	public String getFileName() {
@@ -74,7 +66,13 @@ public class ResultFile {
 	public void setFilePath(String filePath) {
 		this.filePath = filePath;
 	}
-	
-	
+
+	public String getSrcFileId() {
+		return srcFileId;
+	}
+
+	public void setSrcFileId(String srcFileId) {
+		this.srcFileId = srcFileId;
+	}
 
 }
